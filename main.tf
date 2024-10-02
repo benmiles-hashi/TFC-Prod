@@ -1,11 +1,11 @@
 resource "aws_instance" "myec2" {
   ami                     = var.ami
-  instance_type           = "t2.micro"
+  instance_type           = var.instance_type
 
   tags = {
-    Name = "MyEC2-VCS-Prod"
-    owner = "Ben Miles"
-    Env   = "Prod"
+    Name = var.name
+    owner = var.owner
+    Env   = var.env
   }
 
 }
